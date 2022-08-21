@@ -50,6 +50,11 @@ h1 {
 
 }
 
+input,
+button {
+  font-size: 1em;
+}
+
 button {
   background-color: darkturquoise;
   border: solid 2px deepskyblue;
@@ -66,6 +71,7 @@ button:hover {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 li {
@@ -78,4 +84,9 @@ li {
 
 li:last-child {
   border-bottom: none;
+}
+
+.checked-off-task {
+  text-decoration: line-through;
+  background: lightgrey;
 }

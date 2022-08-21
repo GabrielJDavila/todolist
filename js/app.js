@@ -8,8 +8,12 @@ const listContainer = document.querySelector('.list-container');
 const lastItem = document.querySelector('li:last-child');
 
 addTask.addEventListener('click', () => {
-  list.insertAdjacentHTML("afterbegin", `<li>${input.value}</li>`);
+  list.insertAdjacentHTML("afterbegin", `<li class="task-item">${input.value}</li>`);
   input.value = '';
+  let checkedTask = document.querySelector('.task-item');
+  checkedTask.addEventListener('click', () => {
+    checkedTask.classList.add('checked-off-task');
+  });
 })
 
 toggleList.addEventListener('click', () => {
