@@ -6,6 +6,8 @@ const input = document.querySelector('.input-main');
 const list = document.querySelector('ul');
 const listContainer = document.querySelector('.list-container');
 const lastItem = document.querySelector('li:last-child');
+const clearBtn = document.querySelector('.btn-clear');
+
 
 addTask.addEventListener('click', () => {
   list.insertAdjacentHTML("afterbegin", `<li class="task-item">${input.value}</li>`);
@@ -14,7 +16,10 @@ addTask.addEventListener('click', () => {
   checkedTask.addEventListener('click', () => {
     checkedTask.classList.add('checked-off-task');
   });
-})
+  clearBtn.addEventListener('click', () => {
+    checkedTask.remove();
+  });
+});
 
 toggleList.addEventListener('click', () => {
   if(listContainer.style.display === 'none') {
@@ -23,12 +28,12 @@ toggleList.addEventListener('click', () => {
   } else {
     toggleList.textContent = 'Show List';
     listContainer.style.display = 'none';
-  }
-})
+  };
+});
 
 removeTask.addEventListener('click', () => {
   const lastItem = document.querySelector('li:last-child');
   if (lastItem) {
     lastItem.remove();
-  }
-})
+  };
+});
